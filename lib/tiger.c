@@ -252,7 +252,9 @@ void tiger_update(struct tiger_ctx *ctx, mutils_word8 * buffer, mutils_word32 le
 void tiger_final(struct tiger_ctx *ctx)
 {
 	register mutils_word64 i, j;
-	mutils_word8 temp[TIGER_DATASIZE];
+	/* Force 64-bit alignment */
+	mutils_word64 temp_64bit[TIGER_DATASIZE/8];
+	mutils_word8 *temp = temp_64bit;
 	i = ctx->index;
 	
 #if defined(WORDS_BIGENDIAN)
