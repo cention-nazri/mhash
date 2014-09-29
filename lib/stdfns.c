@@ -24,6 +24,7 @@
  */
 
 #include "libdefs.h"
+#include <limits.h>
 
 /**
  * Some of these are wrappers. The idea is to eventually produce an extremely
@@ -408,11 +409,11 @@ mutils_memcmp(__const void *s1, const void *s2, const mutils_word32 n)
 		{
 			return(0);
 		}
-		return(-MAXINT);
+		return(-INT_MAX);
 	}
 	if (s2 == NULL)
 	{
-		return(MAXINT);
+		return(INT_MAX);
 	}
 
 	return(memcmp(s1, s2, n));
@@ -539,11 +540,11 @@ mutils_strcmp(__const mutils_word8 *src1, const mutils_word8 *src2)
 		{
 			return(0);
 		}
-		return(-MAXINT);
+		return(-INT_MAX);
 	}
 	if (src2 == NULL)
 	{
-		return(MAXINT);
+		return(INT_MAX);
 	}
 	return(strcmp((char *) src1, (char *) src2));
 }
@@ -562,11 +563,11 @@ mutils_strncmp(__const mutils_word8 *src1, const mutils_word8 *src2, const mutil
 		{
 			return(0);
 		}
-		return(-MAXINT);
+		return(-INT_MAX);
 	}
 	if (src2 == NULL)
 	{
-		return(MAXINT);
+		return(INT_MAX);
 	}
 	return(strncmp((char *) src1, (char *) src2, n));
 }
