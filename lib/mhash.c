@@ -80,8 +80,8 @@ static __const mhash_hash_entry algorithms[] = {
 #endif
 
 #if defined(ENABLE_MD5)
-	MHASH_ENTRY(MHASH_MD5, 16, 64, sizeof(MD5_CTX), MD5Init,
-		MD5Update, NULL, MD5Final),
+	MHASH_ENTRY(MHASH_MD5, 16, 64, sizeof(cention_MD5_CTX), cention_MD5Init,
+		cention_MD5Update, NULL, cention_MD5Final),
 #endif
 
 #if defined(ENABLE_MD4)
