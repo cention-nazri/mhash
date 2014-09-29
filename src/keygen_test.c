@@ -121,7 +121,7 @@ int main()
 	
 	mhash_keygen_ext(KEYGEN_S2K_SALTED, data, key, keysize, password, passlen);
 
-	mutils_memset(tmp, 0, keysize * 2);
+	// mutils_memset(tmp, 0, keysize * 2);
 
 	tmp = mutils_asciify(key, keysize);
 
