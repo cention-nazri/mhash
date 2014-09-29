@@ -719,6 +719,8 @@ WIN32DLL_DEFINE MHASH mhash_restore_state_mem(void* _mem)
 	mutils_memcpy( &ret->state_size, &mem[pos], sizeof(ret->state_size));
 	pos += sizeof( ret->state_size);
 
+	if (ret->state)
+		mutils_free(ret->state);
 	ret->state = mutils_malloc(ret->state_size);
 	if (ret->state==NULL)
 		goto freeall;
