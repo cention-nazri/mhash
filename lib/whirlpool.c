@@ -970,6 +970,8 @@ void whirlpool_digest(__const struct whirlpool_ctx * ctx,
                     mutils_word8 * digest)
 {
    mutils_word32 i;
+
+   if(!digest) return;
     /*
      * return the completed message digest:
      */
